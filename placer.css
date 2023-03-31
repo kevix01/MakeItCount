@@ -1,18 +1,32 @@
-.navbar{
+#navbar{
     background-color: lightcyan;
     width: 100%;
     height: 10vh;
     min-height: 50px;
     display: flex;
+    top: 0;
     flex-direction: row;
-    justify-content: center;        
+   /* justify-content: center; */
     align-items: center;    
    /*white-space: nowrap;*/
     position: fixed;
+    transition: top 0.3s;
 }
 
 .wrapper{
     display: flex;
+}
+
+.ad{
+    grid-area: adv;
+    background-color: yellow;
+}
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    background-color: lightgray;
+    justify-content: space-around;
 }
 
 .grid-container{
@@ -23,7 +37,7 @@
                          'main main adv'
                          'footer footer footer';
     /*gap: 10px;*/
-    grid-template-rows: 5fr 2fr 1fr;
+    grid-template-rows: 5fr 0.5fr 0.2fr;
     grid-template-columns: 2fr 2fr 1.5fr;
     column-gap: 1vh;
 }
@@ -40,34 +54,39 @@
 
 .logo{
     margin: 0 2vw;
-    /*transform: translate(-50%, -50%);*/
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, 0);*/
 }
 
-.navbar span{
+#navbar > span{
     margin: 0 2vw;
     max-height: 100%;
     display: inline-block;
-    font-size: calc(5px + 1.5vh);
+    font-size: calc(5px + 1.7vh);
+    text-align: center;
     font-family: Monaco, monospace;
+    flex: 1 1 0;
 }
 
-.navbar > span > a:link { 
+#navbar > span > a:link { 
     text-decoration: none;
     color: lightskyblue; 
 } 
-.navbar > span > a:visited {
+#navbar > span > a:visited {
     text-decoration:none; color: lightskyblue;
 }
-.navbar > span > a:hover { text-decoration: none; } 
-.navbar > span > a:active { text-decoration: none; }
+#navbar > span > a:hover { text-decoration: none; } 
+#navbar > span > a:active { text-decoration: none; }
 
-.navbar div{
+#navbar div{
     margin: 0 2vw;
     height: 80%;
     align-items: center;
+    flex: 1 1 0;
 }
 
-.navbar > div > img{
+#navbar > div > img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -115,7 +134,7 @@ html, body{
                          'footer footer';
         /*gap: 10px;*/
         /* Force one item per row */
-        grid-template-rows: 5fr 2fr 2fr;
+        grid-template-rows: 5fr 0.5fr 0.2fr;
         grid-template-columns: 2fr 1fr;
         column-gap: 1vh;
     }
@@ -132,7 +151,7 @@ html, body{
                          'footer footer';
         /*gap: 10px;*/
         /* Force one item per row */
-        grid-template-rows: 5fr 2fr 2fr;
+        grid-template-rows: 5fr 0.5fr 0.2fr;
         grid-template-columns: 2fr 1fr;
         column-gap: 1vh;
     }
@@ -149,7 +168,7 @@ html, body{
                          'footer footer';
         /*gap: 10px;*/
         /* Force one item per row */
-        grid-template-rows: 5fr 2fr 2fr;
+        grid-template-rows: 5fr 0.5fr 0.2fr;
         grid-template-columns: 2fr 1fr;
         column-gap: 1vh;
     }
@@ -166,7 +185,7 @@ html, body{
                          'adv'
                          'footer';
         /*gap: 10px;*/
-        grid-template-rows: 5fr 5fr 1fr 2fr;
+        grid-template-rows: 5fr 3fr 0.5fr 0.2fr;
         grid-template-columns: 1fr;
         column-gap: 1vh;
     }
